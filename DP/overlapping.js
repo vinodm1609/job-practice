@@ -11,7 +11,7 @@ console.log(fib(n));
 
 // tabulation
 function fid(n) {
-  let g = new Array(n + 1);
+  let g = new Array(n + 1); // base case
   g[0] = 0;
   g[1] = 1;
 
