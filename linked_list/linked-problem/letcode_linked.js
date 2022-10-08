@@ -61,7 +61,7 @@ var swapPairs = function (head) {
   let prev = newNode;
   let curr = head;
   while (curr && curr.next) {
-    const v = curr.next;
+    const t = curr.next;
     curr.next = t.next;
     t.next = curr;
     prev.next = t;
