@@ -5,9 +5,8 @@ function fac(n) {
   }
 
   let choti = fac(n - 1);
-  let badi = n * choti;
 
-  return badi;
+  return n * choti;
 }
 
 // console.log(fac(5));

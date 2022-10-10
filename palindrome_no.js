@@ -24,3 +24,4 @@ function palindrome(x) {
   }
   return true;
 }
+

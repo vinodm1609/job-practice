@@ -25,7 +25,6 @@ function plusMinus(arr) {
   console.log(z);
   return v, a, z;
 }
-
 plusMinus(arr);
 
 function findMedian(arr) {

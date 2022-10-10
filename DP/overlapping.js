@@ -20,3 +20,15 @@ function fid(n) {
   }
   return [n];
 }
+
+
+function fit(n) {
+  if (n == 0) {
+    return 0
+  }
+  if (n == 1) {
+    return 1
+  }
+  const DP = fit(n - 1) + fit(n - 2)
+  return DP
+}
