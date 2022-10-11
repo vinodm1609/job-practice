@@ -1,17 +1,17 @@
-var addTwoNumbers = function (l1, l2) {
-  let head = new ListNode();
-  let count = 0;
-  let curr = head;
-  while (l1 || l2 || count) {
-    const s = l1.val + l2.val;
-    count = Math.floor(s / 10);
-    curr.next = new ListNode(s % 10);
-    curr = curr.next;
-    l1 = l1?.next;
-    l2 = l2?.next;
-  }
-  return head.next;
-};
+// var addTwoNumbers = function (l1, l2) {
+//   let head = new ListNode();
+//   let count = 0;
+//   let curr = head;
+//   while (l1 || l2 || count) {
+//     const s = l1.val + l2.val;
+//     count = Math.floor(s / 10);
+//     curr.next = new ListNode(s % 10);
+//     curr = curr.next;
+//     l1 = l1?.next;
+//     l2 = l2?.next;
+//   }
+//   return head.next;
+// };
 
 var removeNthFromEnd = function (head, n) {
   let curr = ListNode(0, head);
