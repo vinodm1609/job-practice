@@ -12,3 +12,17 @@ function insertionSort(arr) {
 
 const arr = [11, 17, 5, 28, 3, 6, 15];
 console.log(insertionSort(arr));
+
+
+function insertion(arr, n) {
+  for (let i = 0; i < n; i++) {
+    let curr = arr[i]
+    let j = i - 1
+    while (i > -1 && curr < arr[j]) {
+      arr[j + 1] = arr[j]
+      j--
+    }
+    arr[j + 1] = curr
+  }
+  return
+}
