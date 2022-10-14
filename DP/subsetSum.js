@@ -1,27 +1,27 @@
 const arr = [2, 3, 7, 8, 10]
 const sum = 11
 const n = arr.length
-// function subset(arr, sum) {
-//     let p = new Array(n + 1)
-//     for (let i = 0; i < n; i++) {
-//         p[i] = new Array(sum + 1)
-//         for (let j = 0; j < sum; j++) {
-//             if (i == 0) {
-//                 p[i][j] = false;
-//             }
-//             else if (j == 0) {
-//                 p[i][j] = true
-//             }
-//             else if (arr[i - 1] <= j) {
-//                 p[i][j] = p[i][j - arr[i - 1]] || p[i - 1][j]
-//             } else {
-//                 p[i][j] = p[i - 1][j]
+function subset(arr, sum) {
+    let p = new Array(n + 1)
+    for (let i = 0; i < n; i++) {
+        p[i] = new Array(sum + 1)
+        for (let j = 0; j < sum; j++) {
+            if (i == 0) {
+                p[i][j] = false;
+            }
+            else if (j == 0) {
+                p[i][j] = true
+            }
+            else if (arr[i - 1] <= j) {
+                p[i][j] = p[i][j - arr[i - 1]] || p[i - 1][j]
+            } else {
+                p[i][j] = p[i - 1][j]
 
-//             }
-//         }
-//     }
-//   return p[n][sum]
-// }
+            }
+        }
+    }
+    return p[n][sum]
+}
 
 
 function subsett(arr, sum, n) {
