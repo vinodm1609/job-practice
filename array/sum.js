@@ -16,20 +16,41 @@ function towSum(arr) {
 
 // console.log(towSum(arr));
 
-const arr = [1, 2, 3, 4, 3, 2, 1, 3, 5, 3];
-const n = arr.length;
-function max(arr) {
-  let count = 0;
-  let sum = 0;
+// const arr = [1, 2, 3, 4, 3, 2, 1, 3, 5, 3];
+// const n = arr.length;
+// function max(arr) {
+//   let count = 0;
+//   let sum = 0;
 
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-      if (arr[i] == arr[j]) {
-        sum = arr[i];
-      }
+//   for (let i = 0; i < n; i++) {
+//     for (let j = 0; j < n; j++) {
+//       if (arr[i] == arr[j]) {
+//         sum = arr[i];
+//       }
+//     }
+//   }
+//   return sum;
+// }
+
+// console.log(max(arr));
+
+
+let arr = [0, -5, 10, 1, 20, 90, -3]
+
+function arrey(arr) {
+  let temp = []
+  let arr1 = []
+  let merge = []
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] <= 0) {
+      temp.push(arr[i])
+    } else {
+      arr1.push(arr[arr.length - i])
     }
+    merge = [...arr1, ...temp]
   }
-  return sum;
+  return merge;
 }
+console.log(arrey(arr));
 
-console.log(max(arr));
+// merge = [...arr1, ...temp]

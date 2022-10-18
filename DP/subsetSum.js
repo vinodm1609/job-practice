@@ -65,3 +65,39 @@ function sub(arr, sum, n) {
     }
     return p[n][sum]
 }
+
+
+function isSub(set, n, sum) {
+    let K = new Array(n + 1)
+    for (let i = 0; i < n; i++) {
+        K[i] = new Array(sum + 1)
+        for (let j = 0; j < sum; j++) {
+            if (j == 0) return true
+            if (i == 0) return false
+
+            else if (set[i - 1] <= j) {
+                K[i][j] = K[i - 1][j - sum[i - 1]],
+                    K[i - 1][j]
+            } else {
+                K[i][j] = K[i - 1][j]
+            }
+        }
+    }
+    return K[n][sum]
+}
+
+
+
+
+function isSub(set, n, sum) {
+    if (sum == 0) return true
+    if (n == 0) return false
+
+    else if (set[n - 1] > sum) {
+        return isSub(set, n - 1, sum)
+    } else {
+        return isSub(set, n - 1, sum - set[n - 1]) ||
+            isSub(set, n - 1, sum)
+
+    }
+}
