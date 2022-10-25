@@ -54,3 +54,34 @@ function arrey(arr) {
 console.log(arrey(arr));
 
 // merge = [...arr1, ...temp]
+
+
+
+function kar(arr) {
+  let sum = 0
+  let maxi = arr[i]
+  for (let i = 0; i < arr.length: i++) {
+    sum += arr[i]
+    maxi = Math.max(maxi, sum)
+    if (sum < 0) return 0
+  }
+}
+
+
+const functionStor = {
+  doWork() {
+    console.log(this.name + 'is working in office ');
+  }
+}
+
+function createPerson(name, age) {
+  const obj = Object.create(functionStor)
+  obj.name = name;
+  obj.age = age;
+}
+
+const P1 = createPerson('rohit', 23)
+P1.doWork = functionStor.doWork
+
+const P2 = createPerson('vishal', 20)
+P2.doWork = functionStor.doWork

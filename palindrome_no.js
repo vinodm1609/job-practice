@@ -1,4 +1,4 @@
-let x = 121;
+let x = "A man, a plan, a canal: Panama"
 
 function palindrome(x) {
   let str = x + "";
@@ -24,4 +24,6 @@ function palindrome(x) {
   }
   return true;
 }
+
+// Contains Duplicate?
 
