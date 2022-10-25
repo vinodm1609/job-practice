@@ -1,4 +1,4 @@
-const arr = [3, 2, 1, 56, 10000, 167]
+const arr = [3, 2, 1, 56, 10_000, 167]
 
 // function minMax(arr) {
 //     let n = arr.length
@@ -70,4 +70,36 @@ function anu(arr) {
     }
     console.log(max, min);
 }
-anu(arr)
+// anu(arr)
+
+
+
+function array(arr) {
+    let min = arr[0]
+    let max = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) min = arr[i]
+    }
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] > max) max = arr[j]
+    }
+    console.log(min, max);
+}
+
+// array(arr)
+
+
+function array(arr) {
+    let min = arr[0]
+    let max = arr[0]
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) min = arr[i]
+        if (arr[i] > max) max = arr[i]
+        sum += arr[i]
+    }
+    let l = sum - min
+    let j = sum - max
+    console.log(l, j);
+}
+array(arr)

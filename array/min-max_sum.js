@@ -48,7 +48,7 @@ miniMaxSum(ar);
 //   return s, r, o;
 // }
 
-const arr = [4, 3, 5, 6, 1, 6, 8, 2]
+
 // function minMax(arr) {
 //   let n = arr.length
 //   let min = arr[0]
@@ -76,4 +76,19 @@ const arr = [4, 3, 5, 6, 1, 6, 8, 2]
 //     sum += arr[i]
 //   }
 //   console.log(sum - min, sum - max);
+// }
+
+
+// function array(ar) {
+//   let min = ar[0]
+//   let max = ar[0]
+//   let sum = 0
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < min) min = arr[i]
+//     if (arr[i] > max) max = arr[i]
+//     sum += arr[i]
+//     let l = sum - min
+//     let j = sum - max
+//     console.log(l, j);
+//   }
 // }

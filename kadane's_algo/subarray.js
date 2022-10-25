@@ -1,27 +1,13 @@
-const arr = [5, 3, 2, 5, 67, - 2, -5]
-const n = arr.length
+const arr = [-1, 9, 10, -1, -15, 40, 1, 10, 2, 4, 5, 90, -60, 30, -2, 20]
 
-// this is brute force
-function subarray(arr) {
-    for (let i = 0; i < n; i++) {
-        sum = arr[i]
-        for (let j = 0; j < n; j++) {
-            sum += arr[j]
-        }
-    }
-    return sum;
-}
-// console.log(subarray(arr));
 
-let sum = 0
-let maxi = arr[0]
-function subarray1(arr) {
-    for (let i = 0; i < n; i++) {
+function kadar(arr) {
+    let sum = 0;
+    let maximum = arr[0]
+    for (let i = 0; i < arr.length; i++) {
         sum += arr[i]
-
-        maxi = (maxi, sum)
+        maximum = Math.max(maximum, sum)
+        if (sum < 0) sum = 0
     }
-    return maxi
+    return maximum;
 }
-
-console.log(subarray1(arr));
