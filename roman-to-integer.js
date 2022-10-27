@@ -64,3 +64,15 @@ function romanNumber(x) {
   }
   return sum;
 }
+
+// what is call back 
+
+function show() {
+  console.log('hello');
+
+}
+
+function geek(cb) {
+  cd()
+}
+geek(show)
