@@ -1,0 +1,69 @@
+import { Transform } from "class-transformer";
+import {
+  IsArray,
+  IsBoolean,
+  IsDate,
+  IsEmail,
+  IsEnum,
+  IsMobilePhone,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+} from "class-validator";
+import { ObjectId } from "mongodb";
+import Roles from "../../constants/Roles";
+import TypeAdmin from "../../constants/typeAdmin";
+import { getTransFormedMobile } from "../../utils/MobileTransformationUtils";
+
+export class AddUserDto {
+  @IsOptional()
+  _id: ObjectId;
+
+  @IsString()
+  @IsNotEmpty()
+  @IsEmail()
+  email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
+  @IsNotEmpty()
+  @IsEnum(Roles, { each: true })
+  @IsArray()
+  scopes: string[];
+
+  @IsArray()
+  zones: string[];
+
+  @IsNotEmpty()
+  @IsString()
+  @IsEnum(TypeAdmin)
+  adminType: TypeAdmin;
+
+  @IsMobilePhone(["en-IN"])
+  @Transform(({ value }) => getTransFormedMobile(value))
+  @IsString()
+  @IsOptional()
+  mobile: string;
+
+  @IsBoolean()
+  @IsOptional()
+  isActive: boolean;
+
+  @IsDate()
+  @IsOptional()
+  createdAt: Date;
+
+  @IsDate()
+  @IsOptional()
+  updatedAt: Date;
+
+  @IsString()
+  @IsOptional()
+  createdBy: string;
+
+  @IsString()
+  @IsOptional()
+  updatedBy: string;
+}

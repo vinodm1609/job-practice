@@ -40,3 +40,4 @@ array.push(13); //pushing element
 array.push(14);
 array.push(10);
 array.push(989);
+

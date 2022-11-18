@@ -8,7 +8,7 @@ function register() {
 }
 
 function sendEmail() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, _reject) => {
         setTimeout(() => {
             console.log("send Email");
             resolve();
@@ -18,7 +18,7 @@ function sendEmail() {
 }
 
 function login() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, _reject) => {
         setTimeout(() => {
             console.log("login");
             resolve();
@@ -28,7 +28,7 @@ function login() {
 }
 
 function getUserData() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, _reject) => {
         setTimeout(() => {
             console.log("get");
             resolve();
@@ -38,7 +38,7 @@ function getUserData() {
 }
 
 function display() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, _reject) => {
         setTimeout(() => {
             console.log("display");
             resolve();
