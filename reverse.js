@@ -1,4 +1,4 @@
-const arr = [0, -5, 10, 1, 20, 90, -3, 0, 40, -4, -100, 500]
+
 
 
 
@@ -17,6 +17,11 @@ function arrey(arr) {
     return merge;
 }
 // console.log(arrey(arr));
+
+
+
+
+const arr = [0, -5, 10, 1, 20, 90, -3, 0, 40, -4, -100, 500]
 
 
 function array1(arr) {
@@ -62,3 +67,16 @@ function sum(arr) {
 }
 
 sum(arr)
+
+
+
+function to(arr) {
+    let sum = 0;
+    let maxi = arr[0]
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+        maxi = Math.max(maxi, sum)
+        if(sum <0) sum = 0
+    }
+}

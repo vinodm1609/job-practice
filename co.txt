@@ -1,0 +1,19 @@
+import { Body, Controller, Logger, Post, UseGuards } from "@nestjs/common";
+import { InsertOneResult } from "mongodb";
+import { Admin } from "src/types/Admin";
+import { AddUserDto } from "./dto/addUser.dto";
+import { UserManagementService } from "./user-management.service";
+
+@Controller("/user-management")
+export class UserManagementController {
+  constructor(private readonly userManagementService: UserManagementService) {}
+  private logger = new Logger(UserManagementController.name);
+
+  @Post("/addUser")
+  async addUserAdmin(
+    @Body() addUserDto: AddUserDto
+  ): Promise<InsertOneResult<Admin>> {
+    this.logger.debug(`Adding user ${addUserDto} as an admin on OyeBusy`);
+    return this.userManagementService.addUserAdmin(addUserDto);
+  }
+}

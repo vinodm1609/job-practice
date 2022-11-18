@@ -1,0 +1,43 @@
+import { Inject, Injectable } from "@nestjs/common";
+import { Db, InsertOneResult, Logger } from "mongodb";
+import DatabaseConstants from "src/constants/DatabaseConstants";
+import ErrorCodeConstants from "src/constants/ErrorCodeConstants";
+import { BadRequestException } from "src/exceptions/BadRequestException";
+import { Admin } from "../types/Admin";
+import { AddUserDto } from "./dto/addUser.dto";
+
+@Injectable()
+export class UserManagementService {
+  constructor(@Inject("DATABASE_CONNECTION") private readonly db: Db) {}
+  private logger = new Logger(UserManagementService.name);
+
+  async addUserAdmin(addUserDto: AddUserDto): Promise<InsertOneResult<Admin>> {
+    const verifiedUserEmail = await this.findUserByEmail(addUserDto.email);
+    if (verifiedUserEmail) {
+      this.logger.error("Email already Exiting in Admin Panel");
+      throw new BadRequestException(
+        "Email already Exiting in Admin Panel",
+        ErrorCodeConstants.EMAIL_ALREADY_EXISTS
+      );
+    }
+    addUserDto.createdAt = new Date();
+    addUserDto.updatedAt = new Date();
+    return this.inertsUser(addUserDto);
+  }
+
+  public async findUserByEmail(email: string): Promise<Admin> {
+    this.logger.debug("Finding verified partner by Email");
+    return this.db
+      .collection<Admin>(DatabaseConstants.ADMINS)
+      .findOne({ email });
+  }
+
+  public async inertsUser(
+    addUserDto: AddUserDto
+  ): Promise<InsertOneResult<Admin>> {
+    this.logger.debug("Add User admin");
+    return this.db
+      .collection<Admin>(DatabaseConstants.ADMINS)
+      .insertOne(addUserDto);
+  }
+}
